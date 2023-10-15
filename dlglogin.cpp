@@ -16,6 +16,8 @@ dlgLogin::dlgLogin(QWidget *parent) :
     ui->lineEdit_Psd->setEchoMode(QLineEdit::Password);     //设置为密码输入模式
     this->setAttribute(Qt::WA_DeleteOnClose);               //对话框关闭时自动删除，close()是隐藏窗口，widget接受关闭事件后才会释放窗口
     this->setWindowFlags(Qt::SplashScreen);                 //窗口无边框，不在任务栏显示
+    this->setWindowFlags(Qt::FramelessWindowHint);          //无边框化
+    setAttribute(Qt::WA_TranslucentBackground);             //背景透明
     QApplication::setOrganizationName("myEditor");          //组织名
     QApplication::setApplicationName("Login");              //应用程序名
     readSettings();     //读取用户名和密码
